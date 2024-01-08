@@ -3,7 +3,7 @@ import requests
 from datetime import datetime
 
 # Replace 'YOUR_API_URL' with the actual API URL
-API_URL = 'https://script.google.com/macros/s/AKfycbyrh3wEuvmOlCu2iZaA393m8WMUZHc1555RqtQp6dg4GCy_xTA936tvhydSt864VblCJg/exec?sheet=raw&action=read'
+API_URL = 'YOUR_API_URL'
 
 # Define the file format
 file_format = 'daa_%d-%m-%Y.json'
@@ -23,5 +23,11 @@ if response.status_code == 200:
     with open(file_path, 'w') as file:
         file.write(response.text)
     print(f"API response saved to {file_path}")
+
+    # Add, commit, and push the file to GitHub
+    os.system(f'git add {file_path}')
+    os.system(f'git commit -m "Add API response file {timestamp}"')
+    os.system('git push origin main')  # Replace 'main' with your branch name
+
 else:
     print(f"Failed to fetch API data. Status code: {response.status_code}")
