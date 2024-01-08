@@ -1,4 +1,4 @@
-name: API Call and File Creation
+name: API Call and File Push
 
 on:
   schedule:
