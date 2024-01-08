@@ -3,7 +3,7 @@ import requests
 from datetime import datetime
 
 # Replace 'YOUR_API_URL' with the actual API URL
-API_URL = 'YOUR_API_URL'
+API_URL = 'https://script.google.com/macros/s/AKfycbyrh3wEuvmOlCu2iZaA393m8WMUZHc1555RqtQp6dg4GCy_xTA936tvhydSt864VblCJg/exec?sheet=raw&action=read'
 
 # Define the file format
 file_format = 'daa_%d-%m-%Y.json'
