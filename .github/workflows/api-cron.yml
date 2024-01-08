@@ -21,7 +21,9 @@ jobs:
     - name: API Call and File Push
       run: |
         API_URL='https://script.google.com/macros/s/AKfycbyrh3wEuvmOlCu2iZaA393m8WMUZHc1555RqtQp6dg4GCy_xTA936tvhydSt864VblCJg/exec?sheet=raw&action=read'
-        FILE_FORMAT='daa_$(date +\%d-\%m-\%Y).json'
+        # FILE_FORMAT='daa_$(date +\%d-\%m-\%Y).json'
+         DATE=$(date +'%d-%m-%Y')
+        FILE_FORMAT="${DATE}.json"
         FILE_PATH="${GITHUB_WORKSPACE}/${FILE_FORMAT}"
 
         # Make API call and save response to file
